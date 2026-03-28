@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Connexion — CryptoCloud{% endblock %}
+{% block auth_content %}
+<div class="auth-split">
+
+  <div class="auth-brand">
+    <div class="brand-content">
+      <div class="brand-logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10" stroke="white" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <h1 class="brand-title">CryptoCloud</h1>
+      <p class="brand-sub">
+        Vos fichiers chiffrés de bout en bout avec RSA 2048 bits + AES.
+          Une sécurité maximale pour votre espace personnel dans le cloud.
+      </p>
+      <div class="brand-features">
+        <div class="feature-pill">🔐 Chiffrement RSA 2048 bits</div>
+        <div class="feature-pill">⚡ Chiffrement hybride AES + RSA</div>
+        <div class="feature-pill">☁️ 100 MB de stockage offerts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-card">
+      <h2 class="auth-title">Bon retour!</h2>
+      <p class="auth-sub">Connectez-vous à votre espace sécurisé</p>
+      <form method="POST" action="/login" class="auth-form">
+        <div class="field">
+          <label>Nom d'utilisateur</label>
+          <input type="text" name="username" required autocomplete="off" placeholder="votre_nom">
+        </div>
+        <div class="field">
+          <label>Mot de passe</label>
+          <input type="password" name="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn-submit">Se connecter →</button>
+      </form>
+      <p class="auth-switch">Pas encore de compte ? <a href="/register">Créer un compte</a></p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

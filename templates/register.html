@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Inscription — CryptoCloud{% endblock %}
+{% block auth_content %}
+<div class="auth-split">
+
+  <div class="auth-brand">
+    <div class="brand-content">
+      <div class="brand-logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10" stroke="white" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <h1 class="brand-title">CryptoCloud</h1>
+      <p class="brand-sub">
+        Créez votre espace personnel sécurisé. Une paire de clés RSA 2048 bits
+        sera générée automatiquement et votre clé privée sera protégée par votre mot de passe.
+      </p>
+      <div class="brand-features">
+        <div class="feature-pill">🔑 Clés RSA générées à l'inscription</div>
+        <div class="feature-pill">🛡️ Clé privée chiffrée par votre mot de passe</div>
+        <div class="feature-pill">📦 100 MB offerts dès la création</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-card">
+      <h2 class="auth-title">Créer un compte</h2>
+      <p class="auth-sub">Votre espace chiffré en quelques secondes</p>
+      <form method="POST" action="/register" class="auth-form">
+        <div class="field">
+          <label>Nom d'utilisateur</label>
+          <input type="text" name="username" required autocomplete="off" placeholder="votre_nom">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" required placeholder="vous@email.com">
+        </div>
+        <div class="field">
+          <label>Mot de passe</label>
+          <input type="password" name="password" required placeholder="minimum 6 caractères">
+        </div>
+        <div class="field">
+          <label>Confirmer le mot de passe</label>
+          <input type="password" name="confirm_password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn-submit">Créer mon compte →</button>
+      </form>
+      <p class="auth-switch">Déjà un compte ? <a href="/login">Se connecter</a></p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
